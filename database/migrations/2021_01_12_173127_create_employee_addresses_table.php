@@ -15,6 +15,8 @@ class CreateEmployeeAddressesTable extends Migration
     {
         Schema::create('employee_addresses', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('employee_id');
+            $table->foreign('employee_id')->references('id')->on('employees');
             $table->text('address');
             $table->string('city');
             $table->string('post_code')->nullable();

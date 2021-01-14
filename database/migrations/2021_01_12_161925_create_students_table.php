@@ -14,7 +14,7 @@ class CreateStudentsTable extends Migration
     public function up()
     {
         Schema::create('students', function (Blueprint $table) {
-            $table->id();
+            $table->id(); 
             $table->string('title');
             $table->string('firstname');
             $table->string('middlename');
@@ -30,6 +30,7 @@ class CreateStudentsTable extends Migration
             $table->string('password');
             $table->string('passport')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

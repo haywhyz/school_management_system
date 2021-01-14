@@ -15,6 +15,8 @@ class CreateStudentPhonesTable extends Migration
     {
         Schema::create('student_phones', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('student_id');
+            $table->foreign('student_id')->references('id')->on('students');
             $table->timestamps();
         });
     }

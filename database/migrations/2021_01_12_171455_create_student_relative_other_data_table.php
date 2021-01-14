@@ -15,6 +15,8 @@ class CreateStudentRelativeOtherDataTable extends Migration
     {
         Schema::create('student_relative_other_data', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('student_id');
+            $table->foreign('student_id')->references('id')->on('students');
             $table->string('tax_id')->nullable();
             $table->string('tax_office')->nullable();
             $table->string('identity_number')->nullable();

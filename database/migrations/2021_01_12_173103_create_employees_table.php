@@ -38,6 +38,7 @@ class CreateEmployeesTable extends Migration
             $table->text('comments')->nullable(); 
             $table->string('passport')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

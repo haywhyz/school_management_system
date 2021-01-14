@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEmployeePhonesTable extends Migration
+class EditTableStudentPhone extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateEmployeePhonesTable extends Migration
      */
     public function up()
     {
-        Schema::create('employee_phones', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('employee_id');
-            $table->foreign('employee_id')->references('id')->on('employees');
+        Schema::table('student_phones', function (Blueprint $table) {
             $table->string('phone_type');
             $table->string('phone');
-            $table->timestamps();
         });
     }
 
@@ -30,6 +26,8 @@ class CreateEmployeePhonesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('employee_phones');
+        Schema::table('student_phones', function (Blueprint $table) {
+            //
+        });
     }
 }

@@ -15,6 +15,8 @@ class CreateStudentAddressesTable extends Migration
     {
         Schema::create('student_addresses', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('student_id');
+            $table->foreign('student_id')->references('id')->on('students');
             $table->text('address');
             $table->string('city');
             $table->string('post_code')->nullable();

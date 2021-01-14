@@ -15,6 +15,8 @@ class CreateEmployeeOtherDataTable extends Migration
     {
         Schema::create('employee_other_data', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('employee_id');
+            $table->foreign('employee_id')->references('id')->on('employees');
             $table->string('tax_id')->nullable();
             $table->string('tax_office')->nullable();
             $table->string('identity_number')->nullable();

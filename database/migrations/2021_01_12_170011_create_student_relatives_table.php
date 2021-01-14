@@ -15,6 +15,8 @@ class CreateStudentRelativesTable extends Migration
     {
         Schema::create('student_relatives', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('student_id');
+            $table->foreign('student_id')->references('id')->on('students');
             $table->string('title');
             $table->string('firstname');
             $table->string('lastname');

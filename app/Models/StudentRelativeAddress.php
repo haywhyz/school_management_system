@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class StudentRelativeAddress extends Model
 {
     use HasFactory;
+    public function student(){
+        $this->belongsTo(Student::class);
+    }
+    public function student_relative(){
+        $this->belongsTo(StudentRelative::class);
+    }
+   
 }
